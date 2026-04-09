@@ -1,14 +1,5 @@
+import { Todo } from '../../api/todos';
 import { TodoInfo } from '../TodoInfo/TodoInfo';
-
-type Todo = {
-  id: number;
-  title: string;
-  completed: boolean;
-  user: {
-    name: string;
-    email: string;
-  };
-};
 
 type Props = {
   todos: Todo[];
