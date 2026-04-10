@@ -32,7 +32,9 @@ export const App = () => {
       return;
     }
 
-    const selectedUser = usersFromServer.find(user => user.id === userId);
+    const selectedUser = usersFromServer.find(
+      user => user.id === userId,
+    );
 
     if (!selectedUser) {
       return;
@@ -58,7 +60,10 @@ export const App = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="field">
+          <label htmlFor="titleInput">Title</label>
+
           <input
+            id="titleInput"
             type="text"
             data-cy="titleInput"
             placeholder="Enter a title"
@@ -69,11 +74,16 @@ export const App = () => {
             }}
           />
 
-          {titleError && <span className="error">Please enter a title</span>}
+          {titleError && (
+            <span className="error">Please enter a title</span>
+          )}
         </div>
 
         <div className="field">
+          <label htmlFor="userSelect">User</label>
+
           <select
+            id="userSelect"
             data-cy="userSelect"
             value={userId}
             onChange={event => {
@@ -90,7 +100,9 @@ export const App = () => {
             ))}
           </select>
 
-          {userError && <span className="error">Please choose a user</span>}
+          {userError && (
+            <span className="error">Please choose a user</span>
+          )}
         </div>
 
         <button type="submit" data-cy="submitButton">

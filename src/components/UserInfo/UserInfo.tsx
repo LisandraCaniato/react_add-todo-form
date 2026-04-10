@@ -1,7 +1,4 @@
-type User = {
-  name: string;
-  email: string;
-};
+import { User } from '../../api/todos';
 
 type Props = {
   user: User;
